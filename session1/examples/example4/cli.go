@@ -13,6 +13,7 @@ func main() {
 	flag.Parse()
 
 	if *filename == "" {
+		fmt.Fprintln(os.Stderr, "Error: no input file specified")
 		os.Exit(1)
 	}
 
