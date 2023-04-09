@@ -9,6 +9,16 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
+type Instructor struct {
+	Name  string `json:"name"`
+	Email string `json:"email"`
+}
+
+type Workshop struct {
+	Title       string       `json:"title"`
+	Instructors []Instructor `json:"instructors"`
+}
+
 func main() {
 	filename := flag.String("file", "", "Input file name")
 
@@ -26,7 +36,7 @@ func main() {
 	}
 	defer file.Close()
 
-	var jsonData models.Workshop
+	var jsonData Workshop
 	err = json.NewDecoder(file).Decode(&jsonData)
 	if err != nil {
 		fmt.Println(err)
