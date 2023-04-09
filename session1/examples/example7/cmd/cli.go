@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/marianina8/example5/utils"
+	"github.com/marianina8/example7/utils"
 )
 
 func main() {
