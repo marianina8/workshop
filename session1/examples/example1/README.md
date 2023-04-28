@@ -1,4 +1,4 @@
-# CLI Example - Hello World
+# Example 1 - Hello World
 
 This is a simple command-line interface (CLI) written in Go that outputs "Hello World" when a user enters a specific command. The program uses the `flag` package from the Go standard library to define a command-line flag named `message`, which allows users to customize the output message.
 
@@ -15,7 +15,7 @@ $ ./cli -message "Hello, world!"
 Hello, world!
 ```
 
-If you provide any additional arguments, the program will print an error message and exit with a non-zero status code:
+If you provide any additional arguments, the program will print an error message and exit 1:
 
 ```
 $ ./cli -message "Hello, world!" extra argument
