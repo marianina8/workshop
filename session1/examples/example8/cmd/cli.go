@@ -12,16 +12,14 @@ import (
 func main() {
 	filename := flag.String("file", "", "Input file name")
 	flag.Parse()
-
 	if *filename == "" {
-		log.Fatal("Error: no input file specified")
+		fmt.Fprintln(os.Stderr, "Error: no input file specified")
+		os.Exit(1)
 	}
-
 	yamlData, err := utils.Transform(*filename)
 	if err != nil {
 		log.Fatalf("Error: unable to transform the file; unexpected format: %v", err)
 		os.Exit(1)
 	}
-
 	fmt.Println(string(yamlData))
 }

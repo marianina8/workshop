@@ -2,7 +2,7 @@ package main
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"fmt"
 	"os"
 
 	"gopkg.in/yaml.v2"
@@ -11,25 +11,22 @@ import (
 func transform(filename string) ([]byte, error) {
 	file, err := os.Open(filename)
 	if err != nil {
-		return nil, err
+		fmt.Fprintln(os.Stderr, "Error: cannot open input file")
+		os.Exit(1)
 	}
 	defer file.Close()
 
-	bytes, err := ioutil.ReadAll(file)
-	if err != nil {
-		return nil, err
-	}
-
 	var jsonData Workshop
-	err = json.Unmarshal(bytes, &jsonData)
+	err = json.NewDecoder(file).Decode(&jsonData)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		os.Exit(1)
 	}
 
 	yamlData, err := yaml.Marshal(&jsonData)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		os.Exit(1)
 	}
-
 	return yamlData, nil
 }

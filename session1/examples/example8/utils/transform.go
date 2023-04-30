@@ -2,7 +2,7 @@ package utils
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"fmt"
 	"os"
 
 	"github.com/marianina8/example8/models"
@@ -12,25 +12,22 @@ import (
 func Transform(filename string) ([]byte, error) {
 	file, err := os.Open(filename)
 	if err != nil {
+		fmt.Fprintln(os.Stderr, "Error: cannot open input file")
 		return nil, err
 	}
 	defer file.Close()
 
-	bytes, err := ioutil.ReadAll(file)
-	if err != nil {
-		return nil, err
-	}
-
 	var jsonData models.Workshop
-	err = json.Unmarshal(bytes, &jsonData)
+	err = json.NewDecoder(file).Decode(&jsonData)
 	if err != nil {
+		fmt.Println(err)
 		return nil, err
 	}
 
 	yamlData, err := yaml.Marshal(&jsonData)
 	if err != nil {
+		fmt.Println(err)
 		return nil, err
 	}
-
 	return yamlData, nil
 }

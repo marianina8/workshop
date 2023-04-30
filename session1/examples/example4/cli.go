@@ -19,17 +19,14 @@ type Workshop struct {
 
 func main() {
 	filename := flag.String("file", "", "Input file name")
-
 	flag.Parse()
-
 	if *filename == "" {
 		fmt.Fprintln(os.Stderr, "Error: no input file specified")
 		os.Exit(1)
 	}
-
 	file, err := os.Open(*filename)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Fprintln(os.Stderr, "Error: cannot open input file")
 		os.Exit(1)
 	}
 	defer file.Close()
@@ -40,11 +37,9 @@ func main() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-
 	fmt.Printf("Workshop: %s\n", jsonData.Title)
 	fmt.Println("Instructors:")
 	for _, instructor := range jsonData.Instructors {
-		fmt.Printf("- %s (%s)\n", instructor.Name, instructor.Email)
+		fmt.Printf("  %s (%s)\n", instructor.Name, instructor.Email)
 	}
-
 }
