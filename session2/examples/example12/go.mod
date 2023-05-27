@@ -1,4 +1,4 @@
-module github.com/marianina8/example11
+module github.com/marianina8/example12
 
 go 1.19
 
