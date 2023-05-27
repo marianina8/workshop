@@ -9,7 +9,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/marianina8/example11/utils/utils"
+	"github.com/marianina8/example11/utils"
 	"github.com/spf13/cobra"
 )
 
