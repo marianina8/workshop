@@ -5,17 +5,46 @@ package cmd
 
 import (
 	"fmt"
+	"io/ioutil"
+	"log"
+	"os"
 
+	"github.com/marianina8/example12/utils"
 	"github.com/spf13/cobra"
 )
 
 // yamlToJsonCmd represents the yamlToJson command
 var yamlToJsonCmd = &cobra.Command{
-	Use:   "yamlToJson",
-	Short: "Converts yaml to json",
+	Use:     "yamlToJson",
+	Short:   "Converts yaml to json",
 	Aliases: []string{"y2j"},
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("yamlToJson called")
+		file := cmd.Flag("file").Value.String()
+		silence, _ := cmd.Flags().GetBool("silence")
+		output := cmd.Flag("output").Value.String()
+
+		if file == "" {
+			fmt.Println("Please provide a JSON file to convert")
+			return
+		}
+		jsonData, err := utils.Y2Jtransform(file)
+		if err != nil {
+			log.Fatalf("Error converting JSON to YAML: %v", err)
+			os.Exit(1)
+		}
+
+		if !silence {
+			fmt.Println(string(jsonData))
+		}
+
+		if output != "" {
+			err = ioutil.WriteFile(output, jsonData, 0644)
+			if err != nil {
+				log.Fatalf("Error writing YAML file: %v", err)
+				os.Exit(1)
+			}
+		}
 	},
 }
 

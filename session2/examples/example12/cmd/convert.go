@@ -18,6 +18,7 @@ var convertCmd = &cobra.Command{
 	Use:   "convert",
 	Short: "Converts a JSON to YAML file",
 	Run: func(cmd *cobra.Command, args []string) {
+		// converts json to yaml by default
 		file := cmd.Flag("file").Value.String()
 		silence, _ := cmd.Flags().GetBool("silence")
 		output := cmd.Flag("output").Value.String()
@@ -26,7 +27,7 @@ var convertCmd = &cobra.Command{
 			fmt.Println("Please provide a JSON file to convert")
 			return
 		}
-		yamlData, err := utils.Transform(file)
+		yamlData, err := utils.J2Ytransform(file)
 		if err != nil {
 			log.Fatalf("Error converting JSON to YAML: %v", err)
 			os.Exit(1)

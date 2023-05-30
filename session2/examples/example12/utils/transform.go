@@ -9,7 +9,7 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-func Transform(filename string) ([]byte, error) {
+func J2Ytransform(filename string) ([]byte, error) {
 	file, err := os.Open(filename)
 	if err != nil {
 		return nil, err
@@ -33,4 +33,30 @@ func Transform(filename string) ([]byte, error) {
 	}
 
 	return yamlData, nil
+}
+
+func Y2Jtransform(filename string) ([]byte, error) {
+	file, err := os.Open(filename)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	bytes, err := ioutil.ReadAll(file)
+	if err != nil {
+		return nil, err
+	}
+
+	var yamlData models.Workshop
+	err = yaml.Unmarshal(bytes, &yamlData)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&yamlData)
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
 }
