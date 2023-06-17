@@ -1,0 +1,13 @@
+{
+    "title": "Building Modern CLI Applications with Go",
+    "instructors": [
+        {
+            "name": "Marian Montagnino",
+            "email": "mmontagnino@netflix.com"
+        },
+        {
+            "name": "Romeric Philogene",
+            "email": "rphiologene@qovery.com"
+        }
+    ]
+}
