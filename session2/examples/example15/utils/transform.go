@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/marianina8/example14/models"
+	"github.com/marianina8/example15/models"
 	"gopkg.in/yaml.v2"
 )
 

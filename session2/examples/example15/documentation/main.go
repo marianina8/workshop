@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/marianina8/example14/cmd"
+	"github.com/marianina8/example15/cmd"
 	"github.com/spf13/cobra/doc"
 )
 

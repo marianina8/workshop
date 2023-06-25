@@ -9,16 +9,16 @@ import (
 	"log"
 	"os"
 
-	"github.com/marianina8/example14/utils"
+	"github.com/marianina8/example15/utils"
 	"github.com/spf13/cobra"
 )
 
-// jsonToYamlCmd represents the jsonToYaml command
-var jsonToYamlCmd = &cobra.Command{
-	Use:     "jsonToYaml",
-	Short:   "Converts json to yaml",
-	Aliases: []string{"j2y"},
+// convertCmd represents the convert command
+var convertCmd = &cobra.Command{
+	Use:   "convert",
+	Short: "Converts a JSON to YAML file",
 	Run: func(cmd *cobra.Command, args []string) {
+		// converts json to yaml by default
 		file := cmd.Flag("file").Value.String()
 		silence, _ := cmd.Flags().GetBool("silence")
 		output := cmd.Flag("output").Value.String()
@@ -48,5 +48,8 @@ var jsonToYamlCmd = &cobra.Command{
 }
 
 func init() {
-	convertCmd.AddCommand(jsonToYamlCmd)
+	rootCmd.AddCommand(convertCmd)
+	convertCmd.PersistentFlags().StringP("file", "f", "", "JSON file to convert")
+	convertCmd.PersistentFlags().BoolP("silence", "s", false, "Silence the output")
+	convertCmd.PersistentFlags().StringP("output", "o", "", "Output file name")
 }
