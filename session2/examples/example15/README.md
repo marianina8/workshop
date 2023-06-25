@@ -1,4 +1,4 @@
-# Example 14 - JSON to YAML File Converter
+# Example 14 - Auto generation of man pages
 
 This simple CLI (built with Cobra) requests input for a file that's contents match a specific format structure: 
 

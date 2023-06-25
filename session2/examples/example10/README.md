@@ -1,4 +1,4 @@
-# Cobra CLI Application - Message Command
+# Example 10 - Create a Cobra command
 
 This is a simple Cobra CLI application that provides a single command called "message". It allows you to print a hello world message with an optional name.
 

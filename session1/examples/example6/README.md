@@ -1,4 +1,4 @@
-# Example 6 - JSON to YAML File Converter
+# Example 6 - Refactor code to use modularization
 
 This simple CLI requests input for a file that's contents match a specific format structure: 
 

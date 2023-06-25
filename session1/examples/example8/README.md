@@ -1,4 +1,4 @@
-# Example 8 - JSON to YAML File Converter
+# Example 8 - Pass an invalid file, watch an error returned.  Rewrite error to use clear and concise language.
 
 This simple CLI requests input for a file that's contents match a specific format structure: 
 

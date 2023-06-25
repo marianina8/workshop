@@ -1,4 +1,4 @@
-# Example 5 - JSON to YAML File Converter
+# Example 5 - Modify the CLI to output in YAML format
 
 This simple CLI requests input for a file that's contents match a specific format structure: 
 

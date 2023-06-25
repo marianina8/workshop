@@ -1,4 +1,4 @@
-# Example 13 - JSON to YAML File Converter
+# Example 13 - Global, local, and required flags
 
 This simple CLI (built with Cobra) requests input for a file that's contents match a specific format structure: 
 

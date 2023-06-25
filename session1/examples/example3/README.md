@@ -1,4 +1,4 @@
-# Example 3 - Print contents of an input file
+# Example 3 - Run a couple commands and to show command (verb), argument (noun), and flag (adjective)
 
 Run a couple commands and interpret them to show command (verb), argument (noun), and flag (adjective)
 

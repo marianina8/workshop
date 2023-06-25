@@ -1,4 +1,4 @@
-# Example 11 - JSON to YAML File Converter
+# Example 11 - Create a convert command
 
 This simple CLI (built with Cobra) requests input for a file that's contents match a specific format structure: 
 

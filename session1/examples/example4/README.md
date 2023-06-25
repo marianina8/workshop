@@ -1,4 +1,4 @@
-# Example 4 - JSON File Validator
+# Example 4 - Modify the CLI to validate that the input is of JSON format
 
 This simple CLI requests input for a file that's contents match a specific format structure: 
 

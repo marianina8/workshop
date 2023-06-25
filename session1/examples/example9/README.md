@@ -1,4 +1,4 @@
-# Example 9 - JSON to YAML File Converter
+# Example 9 - Add flags to customize output, silence flag, or output to specify the name of an output file.
 
 This simple CLI requests input for a file that's contents match a specific format structure: 
 

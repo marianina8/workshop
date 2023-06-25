@@ -1,4 +1,4 @@
-# Example 2 - Print contents of an input file
+# Example 2 - Create a CLI that takes in a file input, reads in the file, then outputs the content
 
 This simple CLI requests input for a file name, which it usest to output the result.
 

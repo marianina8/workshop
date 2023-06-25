@@ -1,4 +1,4 @@
-# Example 7 - JSON to YAML File Converter
+# Example 7 - Convert flat structure to group by context
 
 This simple CLI requests input for a file that's contents match a specific format structure: 
 
