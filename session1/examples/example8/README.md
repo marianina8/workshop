@@ -20,18 +20,21 @@ This simple CLI requests input for a file that's contents match a specific forma
 
 If the input file validates against this structure then the data is converted to YAML format and then printed out, otherwise the application will exit 1.
 
+
 ## Usage
 
-To use this program, build with the following command:
+To use this program, build the `cli.go` file:
 
-`$ go build -o cli ./cmd/cli.go`
+`$ go build -o cli ./cmd/cli.go ` // Unix, Linux
+`$ go build -o cli.exe cmd\cli.go` // Windows
 
 This will create an executable file named `cli` in the current directory. You can then run the program with the `./cli` command and provide the `file` flag to print its contents:
 
-```
-$ ./cli -file <filename>
-```
+`./cli -file <filename>` // Unix, Linux
+`.\cli.exe -file <filename>` // Windows
 
-Replace `<filename>` with the name of the file you want to read.  An example file is available, `example.json`, with data within the expected structure and results in a successful execution and YAML output.
+Replace `<filename>` with the name of the file you want to read.
+
+If the file cannot be opened or read, an error message will be printed and the program will exit 1.  If the file can be read, the file's contents will be printed out.
 
 If the file cannot be opened or read, an error message will be printed and the program will exit 1.
