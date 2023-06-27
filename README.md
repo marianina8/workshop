@@ -47,7 +47,7 @@ Also, please make sure to have a [GitHub](https://github.com/) account for Sessi
 - [Example 26 - Add styling to the terminal dashboard layout](session3/examples/example26/)
 
 #### Session 3: Framework links
-- [Survey](https://github.com/AlecAivazis/survey/v2)
+- [Survey](https://github.com/AlecAivazis/survey/)
 - [Color](https://github.com/fatih/color)
 - [Bubbletea (TUI Framework)](https://github.com/charmbracelet/bubbletea)
 
